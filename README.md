@@ -22,4 +22,4 @@ This project is a GitHub listing page that allows users to enter a GitHub userna
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/your-username/github-listing-page.git
+  https://github.com/William73920/github_listing.git
