@@ -272,3 +272,9 @@ option {
   color: #666;
   margin-top: 5px;
 }
+
+.url {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+}

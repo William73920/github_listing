@@ -44,6 +44,13 @@ async function fetchRepositories() {
       profileContainer.style.display = "none";
       repositoryContainer.style.display = "none";
       paginationContainer.style.display = "none";
+    } else if (profileDetails?.message === "API rate limit exceeded") {
+      error.innerText = "API rate limit exceeded.Try after one hour";
+      error.style.display = "block";
+
+      profileContainer.style.display = "none";
+      repositoryContainer.style.display = "none";
+      paginationContainer.style.display = "none";
     } else {
       profileContainer.style.display = "block";
       repositoryContainer.style.display = "flex";
@@ -67,12 +74,21 @@ function displayProfile(profileDetails) {
   const name = document.querySelector(".profile_name");
   const public_repos = document.querySelector(".public_repos");
   const followers = document.querySelector(".followers");
+  const location = document.querySelector(".location");
+  const url = document.querySelector(".url");
+  location.innerHTML = "";
+
+  if (profileDetails.location) {
+    location.innerHTML = `<i class="fi fi-bs-link"></i>${profileDetails.location}`;
+  }
 
   if (profileDetails) {
     avatar.src = profileDetails.avatar_url;
     name.innerHTML = profileDetails.login || profileDetails.name;
     public_repos.innerHTML = `Public-Repos: <span>${profileDetails.public_repos}</span>`;
     followers.innerHTML = `Followers: <span>${profileDetails.followers}</span>`;
+    url.href = profileDetails.html_url;
+    url.innerHTML = `<i class="fi fi-rr-link-alt"></i>${profileDetails.html_url}`;
   } else {
     console.error("Unable to update avatar.src. Check your data structure.");
   }
