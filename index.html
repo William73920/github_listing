@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+    <title>GitHub Repositories</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Search GitHub Repositories</h1>
+        <div class="container__input">
+            <input type="text" id="usernameInput" placeholder="Enter GitHub username">
+            <select id="quantitySelect" onchange="updateResultsPerPage()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+                <option value="100">100</option>
+              </select>
+            <button class="submit" id="usernameInput" >Get Repositories</button>
+        </div>
+        <h1 class="error"></h1>
+        <div class="loader"></div>
+
+        <div class="profile_container">
+            <div class="profile_info">
+                <img src="" alt="" class="profile_avatar">
+                <div class="profile_details">
+                    <h2 class="profile_name"></h2>
+                    <p class="public_repos"></p>
+                    <p class="followers"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="repositoryList">
+
+        </div>
+
+
+    </div>
+    <div id="pagination"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

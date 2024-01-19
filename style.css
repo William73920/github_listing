@@ -1,0 +1,274 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container__input {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+input {
+  flex: 2;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  border: 1px solid grey;
+}
+
+.container__input button {
+  height: 40px;
+  flex: 1;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+}
+
+button:hover {
+  background-color: green;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.profile_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 20px 0;
+}
+
+.public_repos {
+  font-weight: bold;
+}
+
+.public_repos span {
+  font-weight: normal;
+}
+
+.followers {
+  font-weight: bold;
+}
+
+.followers span {
+  font-weight: normal;
+}
+
+#repositoryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-left: 70px;
+}
+
+.repo_card {
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  word-break: break-all;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.repo_card a {
+  font-size: 25px;
+}
+
+.profile_avatar {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* #pagination {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.button_container {
+  display: flex;
+  gap: 0.5rem;
+} */
+
+#pagination {
+  display: flex;
+  justify-content: center;
+}
+
+#pagination button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 3px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  max-height: 100px;
+}
+
+.button_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#pagination button:hover {
+  background-color: #f4f4f4;
+}
+
+#pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: none;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#quantitySelect {
+  height: 40px;
+
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+option {
+  font-size: 16px;
+}
+
+.tags_container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tags_container div {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.tags_container p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
